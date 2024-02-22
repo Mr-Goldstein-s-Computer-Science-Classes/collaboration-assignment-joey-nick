@@ -19,7 +19,12 @@ public class Gradebook {
     }
 
     public void gradeAssignment(String assignment, String studentName, double grade){
-        
+        for (int i = 0; i<names.size(); i++){
+            if (names.get(i).contains(studentName)){
+                Student s = students.get(i);
+                s.gradeAssignment(assignment, grade);
+            }
+        }
     }
 
     public double getAverageGrade(String assignment){
